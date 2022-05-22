@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+        @using (Html.BeginForm("MyForm"))
+        {
+            <p>
+                <b>Text Box : </b> @Html.TextBox("TextBox 1")
+            </p>
+            <p>
+                <b>Text Area :</b> @Html.TextArea("TextArea1")
+            </p>
+            string[] s = { "Kannada", "French", "German", "Spanish", "Hebrew" };
+            SelectList list = new SelectList(s);
+            <p>
+                <b>Drop Down :</b> @Html.DropDownList("MyList", list, "SELECT")
+            </p>
+            <p>
+                <b>List Box :</b> @Html.ListBox("MyListBox", list)
+            </p>
+            <p>
+                <b>Radio Buttons :</b><br />
+                @Html.RadioButton("RadioButton", "RadioButton1")
+                RadioButton 1<br />
+                @Html.RadioButton("RadioButton", "RadioButton2")
+                RadioButton 2<br />
+                @Html.RadioButton("RadioButton", "RadioButton3")
+                RadioButton 3<br />
+
+            </p>
+            <p>
+                <b>Checkboxes:</b><br />
+                @Html.CheckBox("checkbox1", true) CheckBox1 (initially
+                checked)<br />
+                @Html.CheckBox("checkbox2") CheckBox2<br />
+                @Html.CheckBox("checkbox3") CheckBox3
+
+            </p>
+            <p>
+                <b>Action Link : </b>@Html.ActionLink("Back to Home", "Index")
+            </p>
+            <p>
+                <b>Action Link : </b>@Html.ActionLink("Back to User", "AddUser")
+            </p>
+            <input type="submit" value="Save Detail" />
+
+
+        }
+
+@section localContent
+{
+    <h3>HtmlHelpers.cshtml's local content goes here</h3>
+}
+   
